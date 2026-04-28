@@ -1,0 +1,20 @@
+{
+  "hero": {
+    "title": "Scan. Order. Eat",
+    "description": "No app needed. Just choose your favorite bites and enjoy."
+  },
+  "search": {
+    "placeholder": "Search your favorite food..."
+  },
+  "status": {
+    "default": "Unknown",
+    "new": "New",
+    "open": "Open",
+    "accepted": "Accepted",
+    "preparing": "Preparing",
+    "ready": "Ready",
+    "completed": "Completed",
+    "cancelled": "Cancelled",
+    "declined": "Declined"
+  }
+}
