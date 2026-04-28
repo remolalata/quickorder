@@ -56,6 +56,33 @@ const eslintConfig = defineConfig([
           ],
         },
       ],
+      "@typescript-eslint/ban-ts-comment": [
+        "error",
+        {
+          "ts-check": false,
+          "ts-expect-error": "allow-with-description",
+          "ts-ignore": true,
+          "ts-nocheck": true,
+        },
+      ],
+      "@typescript-eslint/consistent-type-imports": [
+        "error",
+        {
+          fixStyle: "inline-type-imports",
+          prefer: "type-imports",
+        },
+      ],
+      "@typescript-eslint/no-empty-object-type": "error",
+      "@typescript-eslint/no-explicit-any": [
+        "error",
+        {
+          fixToUnknown: true,
+          ignoreRestArgs: false,
+        },
+      ],
+      "@typescript-eslint/no-non-null-assertion": "error",
+      "@typescript-eslint/no-unsafe-function-type": "error",
+      "@typescript-eslint/no-wrapper-object-types": "error",
       "@typescript-eslint/no-unused-vars": "off",
       "unused-imports/no-unused-imports": "error",
       "unused-imports/no-unused-vars": [
