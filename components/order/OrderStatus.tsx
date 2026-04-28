@@ -1,10 +1,6 @@
 import { labels } from '@/content/labels';
 import { FALLBACK_STATUS, statusStyles } from '@/lib/order/constants';
-import type {
-  OrderStatusLabel,
-  OrderStatusProps,
-  OrderStatusValue,
-} from '@/lib/order/types';
+import type { OrderStatusLabel, OrderStatusProps, OrderStatusValue } from '@/lib/order/types';
 
 export function OrderStatus({ status }: OrderStatusProps) {
   const statusKey = getStatusKey(status);
@@ -27,8 +23,5 @@ function getStatusKey(status: string): OrderStatusLabel {
 }
 
 function isStyledOrderStatus(status: string): status is OrderStatusValue {
-  return (
-    status !== FALLBACK_STATUS &&
-    Object.prototype.hasOwnProperty.call(statusStyles, status)
-  );
+  return status !== FALLBACK_STATUS && Object.prototype.hasOwnProperty.call(statusStyles, status);
 }

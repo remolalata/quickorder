@@ -13,9 +13,7 @@ export function FilterChipCollection<T extends string>({
   options,
   defaultSelected = [],
 }: FilterChipCollectionProps<T>) {
-  const [selectedOptions, setSelectedOptions] = useState<readonly T[]>(
-    defaultSelected,
-  );
+  const [selectedOptions, setSelectedOptions] = useState<readonly T[]>(defaultSelected);
 
   function toggleOption(option: T) {
     setSelectedOptions((currentOptions) => {

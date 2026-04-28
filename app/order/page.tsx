@@ -32,10 +32,7 @@ export default function OrderPage() {
         </div>
         <SearchInput placeholder={labels.order.search.placeholder} />
         <div className='-mx-4 my-8'>
-          <FilterChipCollection
-            options={menuFilters}
-            defaultSelected={['Best Seller']}
-          />
+          <FilterChipCollection options={menuFilters} defaultSelected={['Best Seller']} />
         </div>
       </main>
     </>
