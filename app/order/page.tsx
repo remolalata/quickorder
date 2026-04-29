@@ -2,9 +2,10 @@ import Image from 'next/image';
 
 import { FilterChipCollection } from '@/components/common/FilterChipCollection';
 import { SearchInput } from '@/components/common/SearchInput';
+import { MenuProductCard } from '@/components/menu/MenuProductCard';
 import { OrderStatus } from '@/components/order/OrderStatus';
 import { labels } from '@/content/labels';
-import { menuCategories, menuTags } from '@/mock/menu';
+import { menuCategories, menuProducts, menuTags } from '@/mock/menu';
 
 const menuFilters = [...menuTags, ...menuCategories] as const;
 
@@ -33,6 +34,14 @@ export default function OrderPage() {
         <SearchInput placeholder={labels.order.search.placeholder} />
         <div className='-mx-4 my-8'>
           <FilterChipCollection options={menuFilters} defaultSelected={['Best Seller']} />
+        </div>
+        <div>
+          <h2 className='mb-6 text-slate-900'>{labels.order.sections.topPicks}</h2>
+          <div className='flex flex-col gap-6'>
+            {menuProducts.map((product) => (
+              <MenuProductCard key={product.id} product={product} />
+            ))}
+          </div>
         </div>
       </main>
     </>

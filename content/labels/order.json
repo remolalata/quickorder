@@ -6,6 +6,12 @@
   "search": {
     "placeholder": "Search your favorite food..."
   },
+  "sections": {
+    "topPicks": "Top Picks for You"
+  },
+  "product": {
+    "addButtonLabel": "Add {productName}"
+  },
   "status": {
     "default": "Unknown",
     "new": "New",
