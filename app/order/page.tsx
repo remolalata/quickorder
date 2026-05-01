@@ -1,10 +1,12 @@
-import Image from 'next/image';
-
 import { FilterChipCollection } from '@/components/common/FilterChipCollection';
 import { SearchInput } from '@/components/common/SearchInput';
+import { SearchInputAutoFocus } from '@/components/common/SearchInputAutoFocus';
+import { AppHeader } from '@/components/layout/AppHeader';
+import { AppNavigation } from '@/components/layout/AppNavigation';
 import { MenuProductCard } from '@/components/menu/MenuProductCard';
 import { OrderStatus } from '@/components/order/OrderStatus';
 import { labels } from '@/content/labels';
+import { APP_SEARCH_INPUT_ID } from '@/lib/navigation/constants';
 import { menuCategories, menuProducts, menuTags } from '@/mock/menu';
 
 const menuFilters = [...menuTags, ...menuCategories] as const;
@@ -12,26 +14,15 @@ const menuFilters = [...menuTags, ...menuCategories] as const;
 export default function OrderPage() {
   return (
     <>
-      <header className='bg-brand-bg p-4 border-slate-200 border-b'>
-        <div className='flex justify-between items-center'>
-          <div className='relative w-[clamp(8.25rem,32vw,12rem)] h-[clamp(2.25rem,7vw,3.25rem)]'>
-            <Image
-              src='/images/logo.png'
-              alt='QuickOrder'
-              fill
-              sizes='(max-width: 640px) 8.25rem, 12rem'
-              className='object-contain'
-            />
-          </div>
-        </div>
-      </header>
+      <AppHeader />
       <main className='bg-brand-bg p-4 py-8'>
         <OrderStatus status='open' />
         <div className='flex flex-col gap-2 mt-2 mb-4'>
           <h1 className='text-slate-900'>{labels.order.hero.title}</h1>
           <p className='text-slate-600'>{labels.order.hero.description}</p>
         </div>
-        <SearchInput placeholder={labels.order.search.placeholder} />
+        <SearchInput id={APP_SEARCH_INPUT_ID} placeholder={labels.order.search.placeholder} />
+        <SearchInputAutoFocus />
         <div className='-mx-4 my-8'>
           <FilterChipCollection options={menuFilters} defaultSelected={['Best Seller']} />
         </div>
@@ -43,7 +34,11 @@ export default function OrderPage() {
             ))}
           </div>
         </div>
+        <div className='mt-12 mb-5'>
+          <h2 className='text-slate-400 text-center'>No app. No login. Order as guest</h2>
+        </div>
       </main>
+      <AppNavigation />
     </>
   );
 }

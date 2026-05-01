@@ -6,7 +6,7 @@ export type MenuProduct = {
   id: string;
   name: string;
   description: string;
-  price: string;
+  price: number;
   imageAlt: string;
   imageSrc: string;
 };

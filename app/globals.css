@@ -2,9 +2,20 @@
 
 @theme {
   --color-brand-bg: #fffbeb;
+  --color-sand: #d8c3ad;
+}
+
+html {
+  background: var(--color-brand-bg);
+  overscroll-behavior: none;
 }
 
 body {
+  min-height: 100dvh;
   margin: 0;
+  overflow-x: hidden;
+  background: var(--color-brand-bg);
   font-size: 14px;
+  overscroll-behavior: none;
+  @apply text-slate-900;
 }

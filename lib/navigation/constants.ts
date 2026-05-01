@@ -1,0 +1,12 @@
+import type { AppNavigationItem } from './types';
+
+export const APP_SEARCH_INPUT_ID = 'app-search';
+export const APP_SEARCH_FOCUS_STORAGE_KEY = 'quickorder:focus-search';
+export const APP_ORDER_ROUTE = '/order';
+
+export const appNavigationItems = [
+  { label: 'menu', icon: 'menu', href: APP_ORDER_ROUTE },
+  { label: 'search', icon: 'search', action: 'search' },
+  { label: 'cart', icon: 'cart', href: '/cart' },
+  { label: 'orders', icon: 'orders', href: '/orders' },
+] as const satisfies readonly AppNavigationItem[];

@@ -1,0 +1,39 @@
+{
+  "basket": {
+    "title": "Your Basket"
+  },
+  "customerDetails": {
+    "title": "Customer Details",
+    "fields": {
+      "nickname": {
+        "label": "Nickname",
+        "placeholder": "What should we call you?"
+      },
+      "mobile": {
+        "label": "Mobile Number (OPTIONAL)",
+        "placeholder": "09XX-XXX-XXXX",
+        "helperText": "Mobile number is optional unless joining loyalty."
+      }
+    },
+    "options": {
+      "joinLoyalty": "Join loyalty for rewards",
+      "newsletter": "I agree to share my number for updates"
+    }
+  },
+  "actions": {
+    "submitOrder": "Submit Order • {total}"
+  },
+  "summary": {
+    "lines": {
+      "subtotal": "Subtotal",
+      "delivery": "Delivery",
+      "total": "Total"
+    },
+    "free": "Free"
+  },
+  "steps": {
+    "menu": "Menu",
+    "review": "Review",
+    "track": "Track"
+  }
+}

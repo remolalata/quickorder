@@ -1,4 +1,17 @@
 {
+  "currency": {
+    "symbol": "₱"
+  },
+  "navigation": {
+    "ariaLabel": "App navigation",
+    "backToMenu": "Back to menu",
+    "items": {
+      "menu": "menu",
+      "search": "search",
+      "cart": "cart",
+      "orders": "orders"
+    }
+  },
   "search": {
     "placeholder": "Search..."
   }
