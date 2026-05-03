@@ -22,6 +22,11 @@ export const menuProducts = [
     price: 145,
     imageAlt: 'Classic Burger',
     imageSrc: 'https://placehold.co/600x400.png',
+    addOns: [
+      { id: 'cheese', label: 'Cheese', price: 20 },
+      { id: 'egg', label: 'Egg', price: 25 },
+      { id: 'bacon', label: 'Bacon', price: 35 },
+    ],
   },
   {
     id: 'crispy-chicken-wrap',
@@ -30,6 +35,11 @@ export const menuProducts = [
     price: 120,
     imageAlt: 'Crispy Chicken Wrap',
     imageSrc: 'https://placehold.co/600x400.png',
+    addOns: [
+      { id: 'cheese', label: 'Cheese', price: 20 },
+      { id: 'extra-chicken', label: 'Extra chicken', price: 45 },
+      { id: 'garlic-sauce', label: 'Garlic sauce', price: 15 },
+    ],
   },
   {
     id: 'mango-cheesecake',
@@ -38,5 +48,10 @@ export const menuProducts = [
     price: 95,
     imageAlt: 'Mango Cheesecake',
     imageSrc: 'https://placehold.co/600x400.png',
+    addOns: [
+      { id: 'mango-glaze', label: 'Mango glaze', price: 20 },
+      { id: 'whipped-cream', label: 'Whipped cream', price: 15 },
+      { id: 'butter-crumbs', label: 'Butter crumbs', price: 15 },
+    ],
   },
 ] as const satisfies readonly MenuProduct[];

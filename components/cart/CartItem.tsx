@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import { Minus, Plus } from 'lucide-react';
 
+import { QuantityCounter } from '@/components/common/QuantityCounter';
 import type { CartItem as CartItemType } from '@/lib/cart/types';
 import { formatCurrency } from '@/lib/currency/format';
 
@@ -23,15 +23,7 @@ export function CartItem({ item }: CartItemProps) {
       <div className='flex flex-1 flex-col gap-2'>
         <h2>{item.name}</h2>
         <p className='text-slate-500 text-xs'>{item.options}</p>
-        <div className='flex items-center gap-4 mt-1'>
-          <button type='button' className='bg-sky-100 p-1 rounded'>
-            <Minus size={14} />
-          </button>
-          <span className='font-bold'>{item.quantity}</span>
-          <button type='button' className='bg-sky-100 p-1 rounded'>
-            <Plus size={14} />
-          </button>
-        </div>
+        <QuantityCounter quantity={item.quantity} size='sm' className='mt-1' />
       </div>
       <div className='ml-auto font-bold'>{formatCurrency(item.price)}</div>
     </div>

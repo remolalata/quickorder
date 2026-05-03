@@ -12,6 +12,11 @@
       "orders": "orders"
     }
   },
+  "quantity": {
+    "label": "Quantity",
+    "decrease": "Decrease quantity",
+    "increase": "Increase quantity"
+  },
   "search": {
     "placeholder": "Search..."
   }

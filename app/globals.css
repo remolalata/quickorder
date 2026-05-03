@@ -15,7 +15,7 @@ body {
   margin: 0;
   overflow-x: hidden;
   background: var(--color-brand-bg);
-  font-size: 14px;
+  font-size: 16px;
   overscroll-behavior: none;
   @apply text-slate-900;
 }

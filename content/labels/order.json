@@ -10,7 +10,11 @@
     "topPicks": "Top Picks for You"
   },
   "product": {
-    "addButtonLabel": "Add {productName}"
+    "addButtonLabel": "Add {productName}",
+    "addToCartButtonLabel": "Add to Cart • {total}",
+    "optionalAddOns": "optional add-ons",
+    "specialInstructions": "special instructions",
+    "specialInstructionsPlaceholder": "E.g. No ice, extra sauce"
   },
   "status": {
     "default": "Unknown",
