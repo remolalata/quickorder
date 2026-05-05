@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 
 import { labels } from '@/content/labels';
-import { APP_ORDER_ROUTE } from '@/lib/navigation/constants';
+import { APP_MENU_ROUTE } from '@/lib/navigation/constants';
 
 type AppHeaderProps = {
   showBackLink?: boolean;
@@ -15,7 +15,7 @@ export function AppHeader({ showBackLink = false }: AppHeaderProps) {
       <div className='flex items-center gap-3'>
         {showBackLink && (
           <Link
-            href={APP_ORDER_ROUTE}
+            href={APP_MENU_ROUTE}
             aria-label={labels.common.navigation.backToMenu}
             className='flex justify-center items-center text-slate-900'
           >

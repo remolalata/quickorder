@@ -9,7 +9,7 @@
       "menu": "menu",
       "search": "search",
       "cart": "cart",
-      "orders": "orders"
+      "order": "order"
     }
   },
   "quantity": {

@@ -6,7 +6,7 @@ import { type LucideIcon, Search, ShoppingBag, ShoppingCart, UtensilsCrossed } f
 
 import { labels } from '@/content/labels';
 import {
-  APP_ORDER_ROUTE,
+  APP_MENU_ROUTE,
   APP_SEARCH_FOCUS_STORAGE_KEY,
   APP_SEARCH_INPUT_ID,
   appNavigationItems,
@@ -17,7 +17,7 @@ const navigationIcons = {
   menu: UtensilsCrossed,
   search: Search,
   cart: ShoppingCart,
-  orders: ShoppingBag,
+  order: ShoppingBag,
 } satisfies Record<AppNavigationIcon, LucideIcon>;
 
 const navigationItemClassName =
@@ -29,9 +29,9 @@ export function AppNavigation() {
   const router = useRouter();
 
   function focusSearchInput() {
-    if (pathname !== APP_ORDER_ROUTE) {
+    if (pathname !== APP_MENU_ROUTE) {
       window.sessionStorage.setItem(APP_SEARCH_FOCUS_STORAGE_KEY, 'true');
-      router.push(APP_ORDER_ROUTE);
+      router.push(APP_MENU_ROUTE);
       return;
     }
 
@@ -49,10 +49,10 @@ export function AppNavigation() {
     <>
       <div className='h-24' aria-hidden='true' />
       <nav
-        className='fixed inset-x-0 bottom-0 z-50 overflow-hidden rounded-t-3xl bg-white px-8 py-2 shadow-[0_-10px_30px_rgba(15,23,42,0.12)]'
+        className='bottom-0 z-50 fixed inset-x-0 bg-white shadow-[0_-10px_30px_rgba(15,23,42,0.12)] px-8 py-2 rounded-t-3xl overflow-hidden'
         aria-label={labels.common.navigation.ariaLabel}
       >
-        <ul className='grid grid-cols-4 items-center'>
+        <ul className='items-center grid grid-cols-4'>
           {appNavigationItems.map((item) => {
             const Icon = navigationIcons[item.icon];
             const isActive = 'href' in item && pathname === item.href;

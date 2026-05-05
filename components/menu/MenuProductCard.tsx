@@ -5,6 +5,7 @@ import { Plus } from 'lucide-react';
 import { labels } from '@/content/labels';
 import { getProductSlug } from '@/lib/menu/slug';
 import type { MenuProduct } from '@/lib/menu/types';
+import { APP_MENU_ROUTE } from '@/lib/navigation/constants';
 
 import { ProductPrice } from './ProductPrice';
 
@@ -14,7 +15,7 @@ type MenuProductCardProps = {
 
 export function MenuProductCard({ product }: MenuProductCardProps) {
   const addButtonLabel = labels.order.product.addButtonLabel.replace('{productName}', product.name);
-  const productHref = `/order/${getProductSlug(product.name)}`;
+  const productHref = `${APP_MENU_ROUTE}/${getProductSlug(product.name)}`;
 
   return (
     <article className='group relative shadow rounded-2xl overflow-hidden'>

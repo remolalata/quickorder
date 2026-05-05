@@ -10,7 +10,7 @@ import { ProductQuantitySelector } from '@/components/common/ProductQuantitySele
 import { labels } from '@/content/labels';
 import { formatCurrency } from '@/lib/currency/format';
 import { getProductSlug } from '@/lib/menu/slug';
-import { APP_ORDER_ROUTE } from '@/lib/navigation/constants';
+import { APP_MENU_ROUTE } from '@/lib/navigation/constants';
 import { menuProducts } from '@/mock/menu';
 
 type ProductPageProps = {
@@ -49,7 +49,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
         />
         <div className='top-4 left-4 absolute'>
           <Link
-            href={APP_ORDER_ROUTE}
+            href={APP_MENU_ROUTE}
             aria-label={labels.common.navigation.backToMenu}
             className='flex justify-center items-center bg-white/90 hover:bg-white shadow backdrop-blur-sm rounded-full focus-visible:outline-2 focus-visible:outline-amber-500 focus-visible:outline-offset-2 w-8 h-8 text-slate-900 transition-colors'
           >

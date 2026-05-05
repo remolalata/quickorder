@@ -1,4 +1,15 @@
-import type { OrderStatusLabel, StatusStyle } from './types';
+import { labels } from '@/content/labels';
+
+import type {
+  OrderPageContent,
+  OrderStatusLabel,
+  OrderStatusTrackerContent,
+  OrderStatusTrackerKey,
+  OrderStatusTrackerState,
+  OrderStatusTrackerStyleKey,
+  OrderSummaryContent,
+  StatusStyle,
+} from './types';
 
 export const FALLBACK_STATUS = 'default';
 
@@ -39,3 +50,62 @@ export const statusStyles = {
     dot: 'bg-zinc-500',
   },
 } satisfies Record<OrderStatusLabel, StatusStyle>;
+
+export const orderStatusTrackerContent = {
+  title: 'Order Status',
+  currentStatus: 'preparing',
+  steps: {
+    new: {
+      label: labels.order.status.new,
+      description: 'Order received by the kitchen',
+      icon: 'receipt',
+    },
+    preparing: {
+      label: labels.order.status.preparing,
+      description: 'Chef is crafting your meal',
+      icon: 'cooking',
+    },
+    ready: {
+      label: labels.order.status.ready,
+      description: 'Pick up at the counter',
+      icon: 'ready',
+    },
+  },
+} satisfies OrderStatusTrackerContent;
+
+export const orderStatusTrackerOrder = [
+  'new',
+  'preparing',
+  'ready',
+] as const satisfies readonly OrderStatusTrackerKey[];
+
+export const orderStatusTrackerStyles = {
+  complete: {
+    icon: 'bg-green-100',
+    line: 'bg-green-200',
+    label: '',
+    description: 'text-slate-500',
+  },
+  current: {
+    icon: 'bg-amber-500 text-white',
+    line: 'bg-amber-200',
+    label: '',
+    description: 'text-slate-500',
+  },
+  upcoming: {
+    icon: 'bg-slate-100',
+    line: 'bg-slate-200',
+    label: 'text-slate-400',
+    description: 'text-slate-400',
+  },
+} satisfies Record<OrderStatusTrackerState, Record<OrderStatusTrackerStyleKey, string>>;
+
+export const orderSummaryContent = {
+  title: 'Order Summary',
+} satisfies OrderSummaryContent;
+
+export const orderPageContent = {
+  actions: {
+    placeAnotherOrder: 'Place Another Order',
+  },
+} satisfies OrderPageContent;

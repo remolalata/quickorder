@@ -1,7 +1,7 @@
 import type { labels } from '@/content/labels';
 
 export type AppNavigationLabel = keyof typeof labels.common.navigation.items;
-export type AppNavigationIcon = 'menu' | 'search' | 'cart' | 'orders';
+export type AppNavigationIcon = 'menu' | 'search' | 'cart' | 'order';
 export type AppNavigationAction = 'search';
 
 type AppNavigationBaseItem = {

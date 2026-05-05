@@ -1,44 +1,47 @@
-import { FilterChipCollection } from '@/components/common/FilterChipCollection';
-import { SearchInput } from '@/components/common/SearchInput';
-import { SearchInputAutoFocus } from '@/components/common/SearchInputAutoFocus';
-import { AppHeader } from '@/components/layout/AppHeader';
-import { AppNavigation } from '@/components/layout/AppNavigation';
-import { MenuProductCard } from '@/components/menu/MenuProductCard';
-import { OrderStatus } from '@/components/order/OrderStatus';
-import { labels } from '@/content/labels';
-import { APP_SEARCH_INPUT_ID } from '@/lib/navigation/constants';
-import { menuCategories, menuProducts, menuTags } from '@/mock/menu';
+import Link from 'next/link';
+import { Check } from 'lucide-react';
 
-const menuFilters = [...menuTags, ...menuCategories] as const;
+import { AppHeader } from '@/components/layout/AppHeader';
+import { OrderStatusTracker } from '@/components/order/OrderStatusTracker';
+import { OrderSummary } from '@/components/order/OrderSummary';
+import { APP_MENU_ROUTE } from '@/lib/navigation/constants';
+import { orderPageContent } from '@/lib/order/constants';
+import { cartItems } from '@/mock/cart';
+
+const orderConfirmationContent = {
+  title: 'Order #A-104',
+  description: 'Please proceed to the counter to pay for your order.',
+};
 
 export default function OrderPage() {
   return (
     <>
-      <AppHeader />
-      <main className='bg-brand-bg p-4 py-8'>
-        <OrderStatus status='open' />
-        <div className='flex flex-col gap-2 mt-2 mb-4'>
-          <h1 className='text-slate-900'>{labels.order.hero.title}</h1>
-          <p className='text-slate-600'>{labels.order.hero.description}</p>
-        </div>
-        <SearchInput id={APP_SEARCH_INPUT_ID} placeholder={labels.order.search.placeholder} />
-        <SearchInputAutoFocus />
-        <div className='-mx-4 my-8'>
-          <FilterChipCollection options={menuFilters} defaultSelected={['Best Seller']} />
-        </div>
-        <div>
-          <h2 className='mb-6 text-slate-900'>{labels.order.sections.topPicks}</h2>
-          <div className='flex flex-col gap-6'>
-            {menuProducts.map((product) => (
-              <MenuProductCard key={product.id} product={product} />
-            ))}
+      <AppHeader showBackLink />
+      <main className='p-4 py-8'>
+        <div className='flex flex-col justify-center items-center mx-auto max-w-4/5 text-center'>
+          <div className='flex justify-center items-center bg-amber-500 rounded-full w-20 h-20'>
+            <div className='flex justify-center items-center bg-white rounded-full w-10 h-10'>
+              <Check size={24} strokeWidth={3} absoluteStrokeWidth className='text-amber-500' />
+            </div>
           </div>
+          <h1 className='mt-6 font-bold text-3xl'>{orderConfirmationContent.title}</h1>
+          <p className='mt-1 text-slate-600'>{orderConfirmationContent.description}</p>
         </div>
-        <div className='mt-12 mb-5'>
-          <h2 className='text-slate-400 text-center'>No app. No login. Order as guest</h2>
+        <div className='mt-8'>
+          <OrderStatusTracker />
+        </div>
+        <div className='mt-8'>
+          <OrderSummary items={cartItems} />
         </div>
       </main>
-      <AppNavigation />
+      <div className='p-4'>
+        <Link
+          href={APP_MENU_ROUTE}
+          className='block w-full rounded-2xl bg-amber-800 p-4 text-center text-white shadow'
+        >
+          {orderPageContent.actions.placeAnotherOrder}
+        </Link>
+      </div>
     </>
   );
 }
