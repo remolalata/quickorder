@@ -1,0 +1,16 @@
+{
+  "business": {
+    "name": "Kanto Bites",
+    "portalLabel": "BUSINESS PORTAL"
+  },
+  "navigation": {
+    "ariaLabel": "Business portal navigation",
+    "items": {
+      "dashboard": "Dashboard",
+      "orders": "Orders",
+      "menu": "Menu",
+      "customer": "Customer",
+      "settings": "Settings"
+    }
+  }
+}

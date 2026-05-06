@@ -18,3 +18,12 @@ export type AppNavigationActionItem = AppNavigationBaseItem & {
 };
 
 export type AppNavigationItem = AppNavigationRouteItem | AppNavigationActionItem;
+
+export type DashboardNavigationLabel = keyof typeof labels.dashboard.navigation.items;
+export type DashboardNavigationIcon = 'dashboard' | 'orders' | 'menu' | 'customer' | 'settings';
+
+export type DashboardNavigationItem = {
+  label: DashboardNavigationLabel;
+  icon: DashboardNavigationIcon;
+  href: string;
+};
